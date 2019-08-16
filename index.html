@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>acuario</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>IMAGENES AL AZAR DE UNA CARPETA</h1>
+        </div>
+        <div class="col-md-6" id="imagen_seleccionada">
+          <!-- acá se ve la imagen al azar -->
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function() {
+        $.getJSON("inc_lee_carpeta.php", function(data) {
+          //buscar cantidad de items en data
+          let cantidad = Object.keys(data).length;
+          imagen_seleccionada =
+            Math.floor(Math.random() * (+cantidad - +1)) + +1;
+          //muestra la foto
+
+          $("#imagen_seleccionada").html(
+            '<img class="img-fluid" src="pescadosjpg/' +
+              data[imagen_seleccionada] +
+              '" height="200" />'
+          );
+          console.log(data[imagen_seleccionada]);
+        });
+
+        
+      });
+    </script>
+  </body>
+</html>
