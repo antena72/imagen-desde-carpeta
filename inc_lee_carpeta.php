@@ -1,6 +1,5 @@
 <?php
-// $carpeta_seleccionada = 'nombre de la carpeta';
-$carpeta_seleccionada = 'pescadosjpg';
+$carpeta_seleccionada = 'nombre de la carpeta';
 
 function lista_archivos($carpeta){
     $carpeta = __DIR__ ."/".$carpeta."/";
