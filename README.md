@@ -1,3 +1,3 @@
 # imagen-desde-carpeta
-Jquery / Booststrap 
+PHP- JSON Jquery / Booststrap 
 Mostrar una imagen al azar tomadas de una carpeta
